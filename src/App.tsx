@@ -4,15 +4,15 @@ import 'semantic-ui-css/semantic.min.css';
 import Weather from './components/Weather';
 
 function App() {
-  const [lat, setLat] = useState([]);
-  const [long, setLong] = useState([]);
-  const [data, setData] = useState([]);
+  const [lat, setLat] = useState<number[]>([]);
+  const [long, setLong] = useState<number[]>([]);
+  const [data, setData] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       navigator.geolocation.getCurrentPosition(function (position) {
-        setLat(position.coords.latitude);
-        setLong(position.coords.longitude);
+        setLat([position.coords.latitude]);
+        setLong([position.coords.longitude]);
       });
 
       await fetch(
@@ -29,11 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      {typeof data.main != 'undefined' ? (
-        <Weather weatherData={data} />
-      ) : (
-        <div></div>
-      )}
+      {data.length > 0 ? <Weather weatherData={data} /> : <div>Loading...</div>}
     </div>
   );
 }

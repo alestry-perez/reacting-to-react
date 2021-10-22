@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^16.11.3
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
   '@vitejs/plugin-react': ^1.0.0
@@ -20,6 +21,7 @@ dependencies:
   semantic-ui-react: 2.0.4_react-dom@17.0.2+react@17.0.2
 
 devDependencies:
+  '@types/node': 16.11.3
   '@types/react': 17.0.31
   '@types/react-dom': 17.0.10
   '@vitejs/plugin-react': 1.0.5
@@ -360,6 +362,10 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
+
+  /@types/node/16.11.3:
+    resolution: {integrity: sha512-aIYL9Eemcecs1y77XzFGiSc+FdfN58k4J23UEe6+hynf4Wd9g4DzQPwIKL080vSMuubFqy2hWwOzCtJdc6vFKw==}
+    dev: true
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
