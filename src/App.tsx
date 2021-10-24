@@ -11,11 +11,11 @@ const API_END_POINT = 'https://api.openweathermap.org/data/2.5/';
 const REACT_APP_API_KEY = '37b4175ce6941166c6afc1fbecea51cf';
 const REACT_APP_ICON_URL = 'https://openweathermap.org/img/w';
 
-// ! set the default setState to 0.
+// ! set the default setState's to 0.
 function App() {
   const [lat, setLat] = useState<number>(0);
   const [long, setLong] = useState<number>(0);
-  const [data, setData] = useState<number[]>([]);
+  const [data, setData] = useState<number>(0);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App-header">
-      {typeof data.main != 'undefined' ? (
+      {typeof data != 'undefined' ? (
         <Weather weatherData={data} />
       ) : (
         <div>
