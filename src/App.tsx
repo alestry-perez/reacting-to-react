@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import './styles/styles.css';
 import 'semantic-ui-css/semantic.min.css';
 import Weather from './components/Weather';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
 // ! removed an unused weather reference.
 // ! imported API endpoints from .env file.
@@ -39,8 +41,16 @@ function App() {
   }, [lat, long]);
 
   return (
-    <div className="App">
-      {data.length > 0 ? <Weather weatherData={data} /> : <div>Loading...</div>}
+    <div className="App-header">
+      {typeof data.main != 'undefined' ? (
+        <Weather weatherData={data} />
+      ) : (
+        <div>
+          <Dimmer active>
+            <Loader>Loading...</Loader>
+          </Dimmer>
+        </div>
+      )}
     </div>
   );
 }
