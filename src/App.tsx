@@ -15,7 +15,7 @@ const REACT_APP_ICON_URL = 'https://openweathermap.org/img/w';
 function App() {
   const [lat, setLat] = useState<number>(0);
   const [long, setLong] = useState<number>(0);
-  const [data, setData] = useState<number>(0);
+  const [data, setData] = useState(0);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App-header">
-      {typeof data != 'undefined' ? (
+      {typeof data.main != 'undefined' ? (
         <Weather weatherData={data} />
       ) : (
         <div>
