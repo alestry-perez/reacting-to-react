@@ -42,6 +42,9 @@ function Home() {
 
   return (
     <div className="App-header">
+      <div>
+        <h1>Todays Weather</h1>
+      </div>
       {typeof data.main != 'undefined' ? (
         <Weather weatherData={data} />
       ) : (
