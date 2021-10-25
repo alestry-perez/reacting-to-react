@@ -40,3 +40,14 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0 1em;
+}
+
+ul li {
+  margin: 0 1em;
+  font-size: 1.7em;
+}
