@@ -1,6 +1,14 @@
 import React from 'react';
 import '../App.css';
-import { NavLink } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch,
+  NavLink,
+} from 'react-router-dom';
 
 const Navbar = () => {
   return (
