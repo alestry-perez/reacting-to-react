@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, Button } from 'semantic-ui-react';
 import '../styles/styles.css';
 import moment from 'moment';
 
@@ -11,13 +10,7 @@ const WeatherCard = ({ weatherData }) => (
   <div className="main">
     <div className="top">
       <p className="header">{weatherData.name}</p>
-      <Button
-        className="button"
-        inverted
-        circular
-        icon="refresh"
-        onClick={refresh}
-      />
+      <button className="button" onClick={refresh} />
     </div>
     <div className="flex">
       <p className="day">
