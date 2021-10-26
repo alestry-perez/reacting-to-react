@@ -1,10 +1,16 @@
-import React from 'react';
-import WeatherApi from './WeatherApi';
+import React, { useState, useEffect } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
+import WeatherPanel from './WeatherPanel';
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
 const WeatherPage = () => {
+  const q = useQuery();
   return (
     <div>
-      <WeatherApi />
+      <WeatherPanel latitude={q.get('lat')} longitude={q.get('lon')} />
     </div>
   );
 };

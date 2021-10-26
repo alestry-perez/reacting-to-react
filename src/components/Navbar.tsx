@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -14,6 +14,12 @@ const Navbar = () => {
         </NavLink>
         <NavLink to="/contact">
           <li>Contact</li>
+        </NavLink>
+        <NavLink to="/weather">
+          <li>Current Location</li>
+        </NavLink>
+        <NavLink to="/weather/?lat=40.7128&lon=74.0060">
+          <li>New York</li>
         </NavLink>
       </ul>
     </div>

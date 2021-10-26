@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../App.css';
 import '../styles/styles.css';
 import WeatherCard from './WeatherCard';
-import { useHistory } from 'react-router-dom';
 
 // ! removed an unused weather reference.
 // ! imported API endpoints from .env file.
@@ -11,16 +10,19 @@ const REACT_APP_API_KEY = '37b4175ce6941166c6afc1fbecea51cf';
 const REACT_APP_ICON_URL = 'https://openweathermap.org/img/w';
 
 // ! set the default setState's to 0.
-function WeatherApi() {
-  const [lat, setLat] = useState<number>(0);
-  const [lon, setLon] = useState<number>(0);
-  const [data, setData] = useState(0);
+function WeatherPanel({ latitude, longitude }) {
+  const [lat, setLat] = useState<number>(latitude || 0);
+  const [lon, setLon] = useState<number>(longitude || 0);
+  const [data, setData] = useState<number>(0);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setLat(position.coords.latitude);
-      setLon(position.coords.longitude);
-    });
+    if (lat != 0 && lon != 0) {
+    } else {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        setLat(position.coords.latitude);
+        setLon(position.coords.longitude);
+      });
+    }
   });
 
   useEffect(() => {
@@ -55,4 +57,4 @@ function WeatherApi() {
   );
 }
 
-export default WeatherApi;
+export default WeatherPanel;
