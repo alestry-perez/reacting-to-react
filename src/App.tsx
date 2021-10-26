@@ -13,7 +13,7 @@ import {
 } from 'react-router-dom';
 
 function App() {
-  // get location from WeatherApi
+  // * getting static location from api
   const [lat, setLat] = useState<number>(0);
   const [lon, setLon] = useState<number>(0);
   useEffect(() => {
