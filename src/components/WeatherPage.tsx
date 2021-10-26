@@ -9,7 +9,11 @@ const WeatherPage = () => {
   const q = useQuery();
   return (
     <div>
-      <WeatherPanel latitude={q.get('lat')} longitude={q.get('lon')} />
+      <WeatherPanel
+        name={q.get('name')}
+        latitude={q.get('lat')}
+        longitude={q.get('lon')}
+      />
     </div>
   );
 };
