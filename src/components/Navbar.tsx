@@ -15,10 +15,10 @@ const Navbar = () => {
         <NavLink to="/contact">
           <li>Contact</li>
         </NavLink>
-        <NavLink to="/weather">
+        <NavLink to="/current_weather">
           <li>Current Location</li>
         </NavLink>
-        <NavLink to="/weather/?lat=40.7128&lon=74.0060">
+        <NavLink to="/location_weather/?lat=40.7128&lon=74.0060">
           <li>New York</li>
         </NavLink>
       </ul>
