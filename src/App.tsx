@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import WeatherPage from './components/WeatherPage';
+import WeatherFetch from './components/WeatherFetch';
+import OtherWeather from './components/OtherWeather';
 
 function App() {
   return (
@@ -13,7 +15,8 @@ function App() {
       <Switch>
         <Route exact path="/home" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/weather" component={WeatherPage} />
+        <Route exact path="/local_weather" component={WeatherFetch} />
+        <Route exact path="/other_locations" component={OtherWeather} />
       </Switch>
     </Router>
   );

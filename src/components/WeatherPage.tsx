@@ -1,15 +1,11 @@
 import React from 'react';
 
-const refresh = () => {
-  window.location.reload();
-};
-
 const WeatherPage = ({ weatherData }) => {
-  <div className="main">
-    <div className="top">
-      <p className="header">{weatherData.name}</p>
+  return (
+    <div>
+      <h1>{weatherData.name}</h1>
     </div>
-  </div>;
+  );
 };
 
 export default WeatherPage;

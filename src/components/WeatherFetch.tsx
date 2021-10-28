@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import '../App.css';
 import '../styles/styles.css';
 import WeatherPage from './WeatherPage';
@@ -6,7 +6,7 @@ import WeatherPage from './WeatherPage';
 const API_URL = 'https://api.openweathermap.org/data/2.5/';
 const API_KEY = '37b4175ce6941166c6afc1fbecea51cf';
 
-function WeatherData({ latitude, longitude, name }) {
+function WeatherFetch({ latitude, longitude, name }) {
   const [lat, setLat] = useState<number>(latitude || 0);
   const [lon, setLon] = useState<number>(longitude || 0);
   const [data, setData] = useState<number>(0);
@@ -36,10 +36,12 @@ function WeatherData({ latitude, longitude, name }) {
   }, [lat, lon]);
 
   return (
-    <div className="App-header">
+    <div>
+      <h1>Todays Weather</h1>
+      <h2>in</h2>
       <WeatherPage weatherData={data} />
     </div>
   );
 }
 
-export default WeatherData;
+export default WeatherFetch;
