@@ -21,6 +21,7 @@ const WeatherPage = () => {
       });
     }
   }, []);
+
   if (latitude && longitude) {
     return <WeatherPanel lat={latitude} lon={longitude} />;
   } else {

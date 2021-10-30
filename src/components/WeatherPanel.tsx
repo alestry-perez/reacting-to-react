@@ -10,16 +10,17 @@ const WeatherPanel = ({ lat, lon }) => {
     if (lat && lon) {
       const fetchData = async () => {
         const response = await fetch(
-          `${API_URL}/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${API_KEY}`
+          `${API_URL}/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${API_KEY}`
         );
         const data = await response.json();
         setWeather(data);
+        console.log(data);
       };
       fetchData();
     }
   }, [lat, lon]);
 
-  if (weather) {
+  if (weather != null) {
     return (
       <div>
         <h1>Todays Weather in: {weather.name}</h1>

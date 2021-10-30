@@ -11,10 +11,10 @@ const Navbar = () => {
         <Link to="/about">
           <li>ABOUT</li>
         </Link>
-        <Link to="/current_location/weather">
+        <Link to="/local/weather">
           <li>LOCAL WEATHER</li>
         </Link>
-        <Link to="/other_location/weather/?lat=12.0464&lon=77.0428">
+        <Link to="/foreign/weather?lat=12.0464&lon=77.0428">
           <li>OTHER LOCATIONS</li>
         </Link>
       </ul>
